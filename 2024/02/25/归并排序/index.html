@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -330,12 +330,41 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-归并排序" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%A6%85%E8%8C%B6%E7%97%95%E8%BF%B9"><span class="toc-text">关于禅茶痕迹</span></a></li></ol></li></ol>
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-02-26 14:58:24'>2024-02-25 23:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E9%80%92%E5%BD%92%E4%B8%8E%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-text">归并排序（递归与非递归实现）</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -348,25 +377,32 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于禅茶痕迹"><a href="#关于禅茶痕迹" class="headerlink" title="关于禅茶痕迹"></a>关于禅茶痕迹</h2><p><strong>禅茶痕迹</strong> 是阁主的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="归并排序（递归与非递归实现）"><a href="#归并排序（递归与非递归实现）" class="headerlink" title="归并排序（递归与非递归实现）"></a>归并排序（递归与非递归实现）</h2><p>首先需要实现是公用的部分：<br>merge，也就是归并的过程。其作用是将两个有序的数组合并为一个有序的数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">merge(int l,int m,int r)&#123;</span><br><span class="line">    int i = l;</span><br><span class="line">    int a = l;</span><br><span class="line">    int b = m + 1;</span><br><span class="line">    while(a &lt;= m &amp;&amp; b &lt;= r)&#123;</span><br><span class="line">        help[i++] = org[a] &lt;= org[b] ? org[a++] : org[b++]; </span><br><span class="line">    &#125;</span><br><span class="line">    while(a &lt;= m)&#123;</span><br><span class="line">        help[i++] = org[a++];</span><br><span class="line">    &#125;</span><br><span class="line">    while(b &lt;= r)&#123;</span><br><span class="line">        help[i++] = org[b++];</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = l;i &lt;= r;i++)&#123;</span><br><span class="line">        org[i]=help[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>递归实现：<br>下面是递归程序的主体，逻辑是将每个步骤细分，直至不能再拆分，最终合并比较。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void mergeSort1(int l,int r)&#123;</span><br><span class="line">    //base case</span><br><span class="line">    if(l == r)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int m = (l + r)/2;</span><br><span class="line">    mergeSort1(l,m);</span><br><span class="line">    mergeSort1(m+1,r);</span><br><span class="line">    merge(l,r);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>非递归实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void mergeSort2(int l,int r)&#123;</span><br><span class="line">    for(int l,m,r,step=1;step&lt;=maxn;step*=2)&#123;</span><br><span class="line">        l = 0;</span><br><span class="line">        while(l &lt; maxn)&#123;</span><br><span class="line">            m = l + step -1;</span><br><span class="line">            if(m + 1 &gt; maxn)&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            r = maxn - 1 &lt;= l + 2*step -1 ? maxn - 1 : l + 2*step - 1; </span><br><span class="line">            merge(l,m,r);</span><br><span class="line">            l = r + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -375,11 +411,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

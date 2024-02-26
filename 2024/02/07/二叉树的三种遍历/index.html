@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>禅茶痕迹</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="禅茶痕迹">
+  <title>二叉树的三种遍历 | 禅茶痕迹</title>
+  <meta name="keywords" content=" cpp , 二叉树 , 遍历 ">
+  <meta name="description" content="二叉树的三种遍历 | 禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="归并排序（递归与非递归实现）首先需要实现是公用的部分：merge，也就是归并的过程。其作用是将两个有序的数组合并为一个有序的数组。 1234567891011121314151617merge(int l,int m,int r)&#123;    int i &#x3D; l;    int a &#x3D; l;    int b &#x3D; m + 1;    while(a &lt;&#x3D; m &amp;&amp; b">
 <meta property="og:type" content="article">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -330,12 +330,62 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-二叉树的三种遍历" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%A6%85%E8%8C%B6%E7%97%95%E8%BF%B9"><span class="toc-text">关于禅茶痕迹</span></a></li></ol></li></ol>
+        <h1 class="article-title">二叉树的三种遍历</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="算法与数据结构">算法与数据结构</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">cpp</a>
+            
+            <a class="color4">二叉树</a>
+            
+            <a class="color3">遍历</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-02-07 15:01:45'>2024-02-07 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86-%E9%80%92%E5%BD%92"><span class="toc-text">二叉树的三种遍历 (递归)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A%E4%B8%AD-%E5%B7%A6-%E5%8F%B3"><span class="toc-text">先序遍历：中 左 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86-%EF%BC%9A%E5%B7%A6-%E4%B8%AD-%E5%8F%B3"><span class="toc-text">中序遍历 ：左 中 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A-%E5%B7%A6-%E5%8F%B3-%E4%B8%AD"><span class="toc-text">后序遍历： 左 右 中</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E9%80%92%E5%BD%92%E5%BA%8F%E7%9A%84%E6%80%9D%E8%B7%AF%E7%90%86%E8%A7%A3%E9%81%8D%E5%8E%86"><span class="toc-text">用递归序的思路理解遍历</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -348,25 +398,67 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于禅茶痕迹"><a href="#关于禅茶痕迹" class="headerlink" title="关于禅茶痕迹"></a>关于禅茶痕迹</h2><p><strong>禅茶痕迹</strong> 是阁主的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树的三种遍历-递归"><a href="#二叉树的三种遍历-递归" class="headerlink" title="二叉树的三种遍历 (递归)"></a>二叉树的三种遍历 (递归)</h1><h2 id="先序遍历：中-左-右"><a href="#先序遍历：中-左-右" class="headerlink" title="先序遍历：中 左 右"></a>先序遍历：中 左 右</h2><p>思路： 每颗节点遵循先打印本节点 之后打印左边的所有节点 再打印右边的所有节点<br>代码：</p>
+<pre><code>void digui(TreeNode* node)&#123;
+    //设置返回条件base case
+    if(node == NULL)&#123;
+        return;
+    &#125;
+    //递归序1
+    cout&lt;&lt;node-&gt;val;
+    //递归序2
+    digui(node-&gt;left);
+    //递归序3
+    digui(node-&gt;right);
+&#125;
+</code></pre>
+<h2 id="中序遍历-：左-中-右"><a href="#中序遍历-：左-中-右" class="headerlink" title="中序遍历 ：左 中 右"></a>中序遍历 ：左 中 右</h2><pre><code>void digui(TreeNode* node)&#123;
+    //设置返回条件base case
+    if(node == NULL)&#123;
+        return;
+    &#125;
+    //递归序1
+    digui(node-&gt;left);
+    //递归序2
+    cout&lt;&lt;node-&gt;val;
+    //递归序3
+    digui(node-&gt;right);
+&#125;
+</code></pre>
+<h2 id="后序遍历：-左-右-中"><a href="#后序遍历：-左-右-中" class="headerlink" title="后序遍历： 左 右 中"></a>后序遍历： 左 右 中</h2><pre><code>void digui(TreeNode* node)&#123;
+    //设置返回条件base case
+    if(node == NULL)&#123;
+        return;
+    &#125;
+    //递归序1
+    digui(node-&gt;left);
+    //递归序2
+    digui(node-&gt;right);
+    //递归序3
+    cout&lt;&lt;node-&gt;val;
+&#125;
+</code></pre>
+<h1 id="用递归序的思路理解遍历"><a href="#用递归序的思路理解遍历" class="headerlink" title="用递归序的思路理解遍历"></a>用递归序的思路理解遍历</h1><p>每个节点都会被遍历三遍，先序，中序，后序的区别在于 在同一个节点出现的第几个位置打印。<br>先序在节点第一次出现的时候打印；<br>中序在节点第二次出现的时候打印；<br>后序在节点第三次出现的时候打印。</p>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -375,11 +467,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

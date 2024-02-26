@@ -6,19 +6,16 @@
   <meta name="keywords" content=" cpp , 栈 , 队列 ">
   <meta name="description" content="用队列模拟栈 | 禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="用队列模拟栈时间：2024年2月6日题目连接：用队列模拟栈 实现过程：1.先新建两个队列使用cpp中的queue新建inQueue 和 outQueue两个队列； 2.push()的实现1.先把数字push()进in队列2.如果out队列为空，in内数字push进out队列3.将out队列全部数字依次push进in队列4.将in队列全部数字依次push进out队列2.pop(),top()等函数无">
+<meta name="description" content="归并排序（递归与非递归实现）首先需要实现是公用的部分：merge，也就是归并的过程。其作用是将两个有序的数组合并为一个有序的数组。 1234567891011121314151617merge(int l,int m,int r)&#123;    int i &#x3D; l;    int a &#x3D; l;    int b &#x3D; m + 1;    while(a &lt;&#x3D; m &amp;&amp; b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用队列模拟栈">
-<meta property="og:url" content="http://example.com/2024/02/06/%E7%94%A8%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F%E6%A0%88/index.html">
+<meta property="og:title" content="禅茶痕迹">
+<meta property="og:url" content="http://example.com/2024/02/25/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="禅茶痕迹">
-<meta property="og:description" content="用队列模拟栈时间：2024年2月6日题目连接：用队列模拟栈 实现过程：1.先新建两个队列使用cpp中的queue新建inQueue 和 outQueue两个队列； 2.push()的实现1.先把数字push()进in队列2.如果out队列为空，in内数字push进out队列3.将out队列全部数字依次push进in队列4.将in队列全部数字依次push进out队列2.pop(),top()等函数无">
+<meta property="og:description" content="归并排序（递归与非递归实现）首先需要实现是公用的部分：merge，也就是归并的过程。其作用是将两个有序的数组合并为一个有序的数组。 1234567891011121314151617merge(int l,int m,int r)&#123;    int i &#x3D; l;    int a &#x3D; l;    int b &#x3D; m + 1;    while(a &lt;&#x3D; m &amp;&amp; b">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-06T15:27:44.976Z">
+<meta property="article:published_time" content="2024-02-25T15:04:37.610Z">
+<meta property="article:modified_time" content="2024-02-26T06:58:24.250Z">
 <meta property="article:author" content="Alex">
-<meta property="article:tag" content="cpp">
-<meta property="article:tag" content="栈">
-<meta property="article:tag" content="队列">
 <meta name="twitter:card" content="summary">
 
 
@@ -154,7 +151,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(1)</small>
+                <small>(3)</small>
             
         </div>
     </li>
@@ -181,7 +178,7 @@
         <div data-rel="算法与数据结构">
             
             算法与数据结构
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -209,7 +206,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="1">
+<input type="hidden" id="yelog_site_posts_number" value="3">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -260,7 +257,15 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>遍历</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>队列</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>二叉树</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -281,6 +286,24 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2024/02/25/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2024-02-25 23:04:37">2024/02/25</span>
+        </a>
+        
+        
+        <a  class="All 算法与数据结构 "
+           href="/2024/02/07/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86/"
+           data-tag="cpp,二叉树,遍历"
+           data-author="" >
+            <span class="post-title" title="二叉树的三种遍历">二叉树的三种遍历</span>
+            <span class="post-date" title="2024-02-07 00:00:00">2024/02/07</span>
+        </a>
         
         
         <a  class="All 算法与数据结构 "
@@ -383,14 +406,10 @@
 <h3 id="2-push-的实现"><a href="#2-push-的实现" class="headerlink" title="2.push()的实现"></a>2.push()的实现</h3><h4 id="1-先把数字push-进in队列"><a href="#1-先把数字push-进in队列" class="headerlink" title="1.先把数字push()进in队列"></a>1.先把数字push()进in队列</h4><h4 id="2-如果out队列为空，in内数字push进out队列"><a href="#2-如果out队列为空，in内数字push进out队列" class="headerlink" title="2.如果out队列为空，in内数字push进out队列"></a>2.如果out队列为空，in内数字push进out队列</h4><h4 id="3-将out队列全部数字依次push进in队列"><a href="#3-将out队列全部数字依次push进in队列" class="headerlink" title="3.将out队列全部数字依次push进in队列"></a>3.将out队列全部数字依次push进in队列</h4><h4 id="4-将in队列全部数字依次push进out队列"><a href="#4-将in队列全部数字依次push进out队列" class="headerlink" title="4.将in队列全部数字依次push进out队列"></a>4.将in队列全部数字依次push进out队列</h4><h3 id="2-pop-top-等函数"><a href="#2-pop-top-等函数" class="headerlink" title="2.pop(),top()等函数"></a>2.pop(),top()等函数</h3><p>无难度，注意 栈中的顶为top() 队列的头为front()</p>
 <h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStack</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; inQueue;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; outQueue;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyStack</span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        inQueue.<span class="built_in">push</span>(x);</span><br><span class="line">        <span class="keyword">if</span>(outQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            outQueue.<span class="built_in">push</span>(inQueue.<span class="built_in">front</span>());</span><br><span class="line">            inQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!outQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            inQueue.<span class="built_in">push</span>(outQueue.<span class="built_in">front</span>());</span><br><span class="line">            outQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!inQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            outQueue.<span class="built_in">push</span>(inQueue.<span class="built_in">front</span>());</span><br><span class="line">            inQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> x = outQueue.<span class="built_in">front</span>();</span><br><span class="line">        outQueue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> outQueue.<span class="built_in">front</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> outQueue.<span class="built_in">empty</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyStack* obj = new MyStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * bool param_4 = obj-&gt;empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
       
-       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
     </div>
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">💰</a>
-</p>
 
 
 
@@ -405,7 +424,7 @@
     </div>
     <div class="copyright">
         <p class="footer-entry">
-    ©2016-2020 Yelog
+    ©2016-2024 Alex
 </p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
@@ -416,24 +435,6 @@
 
     </div>
 </div>
-
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>Help us with donation</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
-    </div>
-</div>
-
 
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
@@ -448,14 +449,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -474,11 +467,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>
