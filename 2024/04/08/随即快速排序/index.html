@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>用队列模拟栈 | 禅茶痕迹</title>
-  <meta name="keywords" content=" cpp , 栈 , 队列 ">
-  <meta name="description" content="用队列模拟栈 | 禅茶痕迹">
+  <title>禅茶痕迹</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="随机快速排序思路：用random()函数随机找出数组中的一个元素x 并 将小于等于x的元素放在 左侧，将 大于x的元素放在右侧，并且保证 x再左侧区域的最右端。之后递归的执行左侧 和 右侧，直到 数组全部顺序排列（左边界大于等于右边界）之后停止。     void quickSort1(int l,int r)&#123;         if(l&gt;&#x3D;r)&#123; &#x2F;&#x2F;边界条件">
 <meta property="og:type" content="article">
@@ -353,38 +353,17 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-用队列模拟栈" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">用队列模拟栈</h1>
+        <article id="post-随即快速排序" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="算法与数据结构">算法与数据结构</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color4">cpp</a>
-            
-            <a class="color2">栈</a>
-            
-            <a class="color3">队列</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-02-06 23:27:44'>2024-02-06 00:00</time>
+            Created At : <time class="date" title='Updated At: 2024-04-08 18:01:00'>2024-04-08 17:13</time>
         
     </div>
     <div class="article-meta">
@@ -406,7 +385,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F%E6%A0%88"><span class="toc-text">用队列模拟栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">实现过程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%88%E6%96%B0%E5%BB%BA%E4%B8%A4%E4%B8%AA%E9%98%9F%E5%88%97"><span class="toc-text">1.先新建两个队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-push-%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.push()的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%85%88%E6%8A%8A%E6%95%B0%E5%AD%97push-%E8%BF%9Bin%E9%98%9F%E5%88%97"><span class="toc-text">1.先把数字push()进in队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%A6%82%E6%9E%9Cout%E9%98%9F%E5%88%97%E4%B8%BA%E7%A9%BA%EF%BC%8Cin%E5%86%85%E6%95%B0%E5%AD%97push%E8%BF%9Bout%E9%98%9F%E5%88%97"><span class="toc-text">2.如果out队列为空，in内数字push进out队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B0%86out%E9%98%9F%E5%88%97%E5%85%A8%E9%83%A8%E6%95%B0%E5%AD%97%E4%BE%9D%E6%AC%A1push%E8%BF%9Bin%E9%98%9F%E5%88%97"><span class="toc-text">3.将out队列全部数字依次push进in队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%B0%86in%E9%98%9F%E5%88%97%E5%85%A8%E9%83%A8%E6%95%B0%E5%AD%97%E4%BE%9D%E6%AC%A1push%E8%BF%9Bout%E9%98%9F%E5%88%97"><span class="toc-text">4.将in队列全部数字依次push进out队列</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-pop-top-%E7%AD%89%E5%87%BD%E6%95%B0"><span class="toc-text">2.pop(),top()等函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-text">代码如下：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">随机快速排序</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -422,10 +401,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="用队列模拟栈"><a href="#用队列模拟栈" class="headerlink" title="用队列模拟栈"></a>用队列模拟栈</h1><p>时间：2024年2月6日<br>题目连接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/implement-stack-using-queues/description/">用队列模拟栈</a></p>
-<h2 id="实现过程："><a href="#实现过程：" class="headerlink" title="实现过程："></a>实现过程：</h2><h3 id="1-先新建两个队列"><a href="#1-先新建两个队列" class="headerlink" title="1.先新建两个队列"></a>1.先新建两个队列</h3><p>使用cpp中的queue新建inQueue 和 outQueue两个队列；</p>
-<h3 id="2-push-的实现"><a href="#2-push-的实现" class="headerlink" title="2.push()的实现"></a>2.push()的实现</h3><h4 id="1-先把数字push-进in队列"><a href="#1-先把数字push-进in队列" class="headerlink" title="1.先把数字push()进in队列"></a>1.先把数字push()进in队列</h4><h4 id="2-如果out队列为空，in内数字push进out队列"><a href="#2-如果out队列为空，in内数字push进out队列" class="headerlink" title="2.如果out队列为空，in内数字push进out队列"></a>2.如果out队列为空，in内数字push进out队列</h4><h4 id="3-将out队列全部数字依次push进in队列"><a href="#3-将out队列全部数字依次push进in队列" class="headerlink" title="3.将out队列全部数字依次push进in队列"></a>3.将out队列全部数字依次push进in队列</h4><h4 id="4-将in队列全部数字依次push进out队列"><a href="#4-将in队列全部数字依次push进out队列" class="headerlink" title="4.将in队列全部数字依次push进out队列"></a>4.将in队列全部数字依次push进out队列</h4><h3 id="2-pop-top-等函数"><a href="#2-pop-top-等函数" class="headerlink" title="2.pop(),top()等函数"></a>2.pop(),top()等函数</h3><p>无难度，注意 栈中的顶为top() 队列的头为front()</p>
-<h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStack</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; inQueue;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; outQueue;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyStack</span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        inQueue.<span class="built_in">push</span>(x);</span><br><span class="line">        <span class="keyword">if</span>(outQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            outQueue.<span class="built_in">push</span>(inQueue.<span class="built_in">front</span>());</span><br><span class="line">            inQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!outQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            inQueue.<span class="built_in">push</span>(outQueue.<span class="built_in">front</span>());</span><br><span class="line">            outQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!inQueue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            outQueue.<span class="built_in">push</span>(inQueue.<span class="built_in">front</span>());</span><br><span class="line">            inQueue.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> x = outQueue.<span class="built_in">front</span>();</span><br><span class="line">        outQueue.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> outQueue.<span class="built_in">front</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> outQueue.<span class="built_in">empty</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyStack* obj = new MyStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * bool param_4 = obj-&gt;empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+        <h2 id="随机快速排序"><a href="#随机快速排序" class="headerlink" title="随机快速排序"></a>随机快速排序</h2><p>思路：<br>用random()函数随机找出数组中的一个元素x 并 将小于等于x的元素放在 左侧，将 大于x的元素放在右侧，并且保证 x再左侧区域的最右端。之后递归的执行左侧 和 右侧，直到 数组全部顺序排列（左边界大于等于右边界）之后停止。</p>
+<pre><code class="cpp">    void quickSort1(int l,int r)&#123;
+        if(l&gt;=r)&#123; //边界条件
+            return;
+        &#125;
+        int x = arr[l + (int)(Math.random()*(r-l+1))];
+        int mid = partition(l,r,x);
+        quickSort1(l,mid - 1);
+        quickSort1(mid+1,r);
+    &#125;
+    int partition(int l,int r,int x)&#123;
+        int a = l,xi = 0;
+        for(int i = l;i&lt;r;i++)&#123;
+            if(arr[i]&lt;=x)&#123;
+                swap(a,i);
+                if(arr[i]==x)&#123;
+                    xi=i;
+                &#125;
+                a++;
+            &#125;
+            
+        &#125;
+        swap(xi,a-1);
+    &#125;
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
     </div>
