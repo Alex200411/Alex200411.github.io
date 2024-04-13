@@ -6,19 +6,17 @@
   <meta name="keywords" content=" cpp , 栈 , 队列 ">
   <meta name="description" content="用队列模拟栈 | 禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="随机快速排序思路：用random()函数随机找出数组中的一个元素x 并 将小于等于x的元素放在 左侧，将 大于x的元素放在右侧，并且保证 x再左侧区域的最右端。之后递归的执行左侧 和 右侧，直到 数组全部顺序排列（左边界大于等于右边界）之后停止。 123456789101112131415161718192021222324void quickSort1(int l,int r)&#123;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="随机快速排序">
-<meta property="og:url" content="http://example.com/2024/04/13/%E9%9A%8F%E5%8D%B3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta name="description" content="leetcode 215.数组中第k个最大元素链接：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;kth-largest-element-in-an-array&#x2F;思路：partition()函数：用 荷兰国旗 随机快排 随机分出 小于x（随机出来的数）区域 等于x区域 大于x区域search()函数：递归判断 k 和 x分出的左边界和右边界的大小 如果 k在左边界里 进入左边界继续递归">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数组中第k个最大元素">
+<meta property="og:url" content="http://example.com/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0.html">
 <meta property="og:site_name" content="禅茶痕迹">
-<meta property="og:description" content="随机快速排序思路：用random()函数随机找出数组中的一个元素x 并 将小于等于x的元素放在 左侧，将 大于x的元素放在右侧，并且保证 x再左侧区域的最右端。之后递归的执行左侧 和 右侧，直到 数组全部顺序排列（左边界大于等于右边界）之后停止。 123456789101112131415161718192021222324void quickSort1(int l,int r)&#123;">
+<meta property="og:description" content="leetcode 215.数组中第k个最大元素链接：https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;kth-largest-element-in-an-array&#x2F;思路：partition()函数：用 荷兰国旗 随机快排 随机分出 小于x（随机出来的数）区域 等于x区域 大于x区域search()函数：递归判断 k 和 x分出的左边界和右边界的大小 如果 k在左边界里 进入左边界继续递归">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-04-13T07:14:12.943Z">
+<meta property="article:modified_time" content="2024-04-13T09:51:13.424Z">
 <meta property="article:author" content="Alex">
 <meta property="article:tag" content="cpp">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary">
 
 
