@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>二叉树的三种遍历 | 禅茶痕迹</title>
-  <meta name="keywords" content=" cpp , 二叉树 , 遍历 ">
-  <meta name="description" content="二叉树的三种遍历 | 禅茶痕迹">
+  <title>禅茶痕迹</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="堆结构与堆排序堆排序思路：1.建立heapify()函数， 将在 头节点 的 i 向下移动 直到它该去的位置    i. 初始设定左孩子（l &#x3D; 2i + 1）右孩子则为（l+1）    ii. while循环判断左孩子和右孩子谁大，之后判断孩子中最大的那个与此数的大小 如果孩子大于此数 交换两数 并将i重置为大孩子所在位置（l &#x3D; 2i + 1）代码实现： 123456789">
 <meta property="og:type" content="article">
@@ -362,38 +362,17 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-二叉树的三种遍历" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">二叉树的三种遍历</h1>
+        <article id="post-堆结构与堆排序" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="算法与数据结构">算法与数据结构</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color4">cpp</a>
-            
-            <a class="color4">二叉树</a>
-            
-            <a class="color3">遍历</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-02-07 15:01:45'>2024-02-07 00:00</time>
+            Created At : <time class="date" title='Updated At: 2024-04-19 10:10:44'>2024-04-18 15:43</time>
         
     </div>
     <div class="article-meta">
@@ -415,7 +394,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86-%E9%80%92%E5%BD%92"><span class="toc-text">二叉树的三种遍历 (递归)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A%E4%B8%AD-%E5%B7%A6-%E5%8F%B3"><span class="toc-text">先序遍历：中 左 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86-%EF%BC%9A%E5%B7%A6-%E4%B8%AD-%E5%8F%B3"><span class="toc-text">中序遍历 ：左 中 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A-%E5%B7%A6-%E5%8F%B3-%E4%B8%AD"><span class="toc-text">后序遍历： 左 右 中</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E9%80%92%E5%BD%92%E5%BA%8F%E7%9A%84%E6%80%9D%E8%B7%AF%E7%90%86%E8%A7%A3%E9%81%8D%E5%8E%86"><span class="toc-text">用递归序的思路理解遍历</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E7%BB%93%E6%9E%84%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="toc-text">堆结构与堆排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="toc-text">堆排序</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -431,47 +410,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二叉树的三种遍历-递归"><a href="#二叉树的三种遍历-递归" class="headerlink" title="二叉树的三种遍历 (递归)"></a>二叉树的三种遍历 (递归)</h1><h2 id="先序遍历：中-左-右"><a href="#先序遍历：中-左-右" class="headerlink" title="先序遍历：中 左 右"></a>先序遍历：中 左 右</h2><p>思路： 每颗节点遵循先打印本节点 之后打印左边的所有节点 再打印右边的所有节点<br>代码：</p>
-<pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
+        <h2 id="堆结构与堆排序"><a href="#堆结构与堆排序" class="headerlink" title="堆结构与堆排序"></a>堆结构与堆排序</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>思路：<br>1.建立heapify()函数， 将在 头节点 的 i 向下移动 直到它该去的位置<br>    i. 初始设定左孩子（l &#x3D; 2<em>i + 1）右孩子则为（l+1）<br>    ii. while循环判断左孩子和右孩子谁大，之后判断孩子中最大的那个与此数的大小 如果孩子大于此数 交换两数 并将i重置为大孩子所在位置（l &#x3D; 2</em>i + 1）<br>代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">heapify</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> i,<span class="type">int</span> size)</span></span>&#123;</span><br><span class="line">    l = <span class="number">2</span>*i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; size)&#123;</span><br><span class="line">        <span class="type">int</span> best = l + <span class="number">1</span> &lt; size &amp;&amp; arr[l+<span class="number">1</span>] &gt; arr[l] ? l + <span class="number">1</span> : l;</span><br><span class="line">        best = best &gt; i ? best : i;</span><br><span class="line">        <span class="built_in">swap</span>(arr[best],arr[i]);</span><br><span class="line">        <span class="keyword">if</span>(best == i)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        i = best;</span><br><span class="line">        l = <span class="number">2</span>*i + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.建立heapInsert()函数，将新加进来的i位置与其父节点比较大小 如果比父节点大就交换 并更新字节点为其父节点（也就是向上挪i&#x3D;(i-1)&#x2F;2）循环进行直到不比<br>父节点大<br>代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">heapInsert</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr,<span class="type">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(arr[i]&gt;arr[(i<span class="number">-1</span>)/<span class="number">2</span>])&#123;</span><br><span class="line">        <span class="built_in">swap</span>(arr[i],arr[(i<span class="number">-1</span>)/<span class="number">2</span>]);</span><br><span class="line">        i = (i - <span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.建立heapSort()函数，循环读取heapInsert()函数，建立堆结构，建立size变量控制堆大小。最后通过while循环将最顶元素与最末元素交换，size–将最后交换出去的数踢出堆结构 使用heapify()将换上最顶的元素往下换直到大根堆成立。</p>
+<pre><code class="cpp">    void heapSort(vector&lt;int&gt;&amp; arr,int n)&#123;
+        for(int i = 0;i &lt; n;i++)&#123;
+            heapInsert(arr,i);
+        &#125;
+        int size = n;
+        while(size &gt; 1)&#123;
+            swap(arr[0],arr[--size]);
+            heapify(arr,0,size);
+        &#125;
     &#125;
-    //递归序1
-    cout&lt;&lt;node-&gt;val;
-    //递归序2
-    digui(node-&gt;left);
-    //递归序3
-    digui(node-&gt;right);
-&#125;
 </code></pre>
-<h2 id="中序遍历-：左-中-右"><a href="#中序遍历-：左-中-右" class="headerlink" title="中序遍历 ：左 中 右"></a>中序遍历 ：左 中 右</h2><pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
-    &#125;
-    //递归序1
-    digui(node-&gt;left);
-    //递归序2
-    cout&lt;&lt;node-&gt;val;
-    //递归序3
-    digui(node-&gt;right);
-&#125;
-</code></pre>
-<h2 id="后序遍历：-左-右-中"><a href="#后序遍历：-左-右-中" class="headerlink" title="后序遍历： 左 右 中"></a>后序遍历： 左 右 中</h2><pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
-    &#125;
-    //递归序1
-    digui(node-&gt;left);
-    //递归序2
-    digui(node-&gt;right);
-    //递归序3
-    cout&lt;&lt;node-&gt;val;
-&#125;
-</code></pre>
-<h1 id="用递归序的思路理解遍历"><a href="#用递归序的思路理解遍历" class="headerlink" title="用递归序的思路理解遍历"></a>用递归序的思路理解遍历</h1><p>每个节点都会被遍历三遍，先序，中序，后序的区别在于 在同一个节点出现的第几个位置打印。<br>先序在节点第一次出现的时候打印；<br>中序在节点第二次出现的时候打印；<br>后序在节点第三次出现的时候打印。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
