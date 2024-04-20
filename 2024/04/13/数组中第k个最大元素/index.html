@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>二叉树的三种遍历 | 禅茶痕迹</title>
-  <meta name="keywords" content=" cpp , 二叉树 , 遍历 ">
-  <meta name="description" content="二叉树的三种遍历 | 禅茶痕迹">
+  <title>数组中第k个最大元素 | 禅茶痕迹</title>
+  <meta name="keywords" content=" cpp ">
+  <meta name="description" content="数组中第k个最大元素 | 禅茶痕迹">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="堆结构与堆排序堆排序思路：1.建立heapify()函数， 将在 头节点 的 i 向下移动 直到它该去的位置    i. 初始设定左孩子（l &#x3D; 2i + 1）右孩子则为（l+1）    ii. while循环判断左孩子和右孩子谁大，之后判断孩子中最大的那个与此数的大小 如果孩子大于此数 交换两数 并将i重置为大孩子所在位置（l &#x3D; 2i + 1）代码实现： 123456789">
 <meta property="og:type" content="article">
@@ -373,9 +373,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-二叉树的三种遍历" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-数组中第k个最大元素" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">二叉树的三种遍历</h1>
+        <h1 class="article-title">数组中第k个最大元素</h1>
     
     <div class="article-meta">
         
@@ -395,16 +395,12 @@
             
             <a class="color4">cpp</a>
             
-            <a class="color4">二叉树</a>
-            
-            <a class="color3">遍历</a>
-            
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-02-07 15:01:45'>2024-02-07 00:00</time>
+            Created At : <time class="date" title='Updated At: 2024-04-13 17:51:13'>2024-04-13 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -426,7 +422,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86-%E9%80%92%E5%BD%92"><span class="toc-text">二叉树的三种遍历 (递归)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A%E4%B8%AD-%E5%B7%A6-%E5%8F%B3"><span class="toc-text">先序遍历：中 左 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86-%EF%BC%9A%E5%B7%A6-%E4%B8%AD-%E5%8F%B3"><span class="toc-text">中序遍历 ：左 中 右</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A-%E5%B7%A6-%E5%8F%B3-%E4%B8%AD"><span class="toc-text">后序遍历： 左 右 中</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E9%80%92%E5%BD%92%E5%BA%8F%E7%9A%84%E6%80%9D%E8%B7%AF%E7%90%86%E8%A7%A3%E9%81%8D%E5%8E%86"><span class="toc-text">用递归序的思路理解遍历</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-215-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%AC%ACk%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0"><span class="toc-text">leetcode 215.数组中第k个最大元素</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -442,48 +438,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二叉树的三种遍历-递归"><a href="#二叉树的三种遍历-递归" class="headerlink" title="二叉树的三种遍历 (递归)"></a>二叉树的三种遍历 (递归)</h1><h2 id="先序遍历：中-左-右"><a href="#先序遍历：中-左-右" class="headerlink" title="先序遍历：中 左 右"></a>先序遍历：中 左 右</h2><p>思路： 每颗节点遵循先打印本节点 之后打印左边的所有节点 再打印右边的所有节点<br>代码：</p>
-<pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
-    &#125;
-    //递归序1
-    cout&lt;&lt;node-&gt;val;
-    //递归序2
-    digui(node-&gt;left);
-    //递归序3
-    digui(node-&gt;right);
-&#125;
-</code></pre>
-<h2 id="中序遍历-：左-中-右"><a href="#中序遍历-：左-中-右" class="headerlink" title="中序遍历 ：左 中 右"></a>中序遍历 ：左 中 右</h2><pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
-    &#125;
-    //递归序1
-    digui(node-&gt;left);
-    //递归序2
-    cout&lt;&lt;node-&gt;val;
-    //递归序3
-    digui(node-&gt;right);
-&#125;
-</code></pre>
-<h2 id="后序遍历：-左-右-中"><a href="#后序遍历：-左-右-中" class="headerlink" title="后序遍历： 左 右 中"></a>后序遍历： 左 右 中</h2><pre><code>void digui(TreeNode* node)&#123;
-    //设置返回条件base case
-    if(node == NULL)&#123;
-        return;
-    &#125;
-    //递归序1
-    digui(node-&gt;left);
-    //递归序2
-    digui(node-&gt;right);
-    //递归序3
-    cout&lt;&lt;node-&gt;val;
-&#125;
-</code></pre>
-<h1 id="用递归序的思路理解遍历"><a href="#用递归序的思路理解遍历" class="headerlink" title="用递归序的思路理解遍历"></a>用递归序的思路理解遍历</h1><p>每个节点都会被遍历三遍，先序，中序，后序的区别在于 在同一个节点出现的第几个位置打印。<br>先序在节点第一次出现的时候打印；<br>中序在节点第二次出现的时候打印；<br>后序在节点第三次出现的时候打印。</p>
-
+        <h2 id="leetcode-215-数组中第k个最大元素"><a href="#leetcode-215-数组中第k个最大元素" class="headerlink" title="leetcode 215.数组中第k个最大元素"></a>leetcode 215.数组中第k个最大元素</h2><p>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/kth-largest-element-in-an-array/">https://leetcode.cn/problems/kth-largest-element-in-an-array/</a><br>思路：<br>partition()函数：用 荷兰国旗 随机快排 随机分出 小于x（随机出来的数）区域 等于x区域 大于x区域<br>search()函数：递归<br>判断 k 和 x分出的左边界和右边界的大小 如果 k在左边界里 进入左边界继续递归 如果在右边界里 进入右边界里继续递归<br>base case:k在左右边界围成的闭区间里 那么返回 nums[nums.size()-k]<br> 0   1   2 3 4 5 6 7 …   nums.size()-k        nums.size()-k<br>min                          max-k+1             max-k+1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> first,last;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">partition</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">        first = l;</span><br><span class="line">        last = r;</span><br><span class="line">        <span class="type">int</span> i = l;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=last)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;x)&#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[i++],nums[first++]);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i]&gt;x)&#123;</span><br><span class="line">                <span class="built_in">swap</span>(nums[i],nums[last--]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">quickSearch</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            <span class="type">int</span> x = nums[l + <span class="built_in">rand</span>()%(r - l + <span class="number">1</span>)];</span><br><span class="line">            <span class="built_in">partition</span>(nums,l,r,x);</span><br><span class="line">            <span class="keyword">if</span>(n &gt; last)&#123;</span><br><span class="line">                l = last + <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n &lt; first)&#123;</span><br><span class="line">                r = first - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result = nums[n];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findKthLargest</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">        <span class="built_in">quickSearch</span>(nums,<span class="number">0</span>,nums.<span class="built_in">size</span>()<span class="number">-1</span>,nums.<span class="built_in">size</span>()-k);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2823790500@qq.com </span>
     </div>
